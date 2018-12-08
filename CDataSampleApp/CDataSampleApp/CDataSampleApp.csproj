@@ -12,4 +12,10 @@
   <ItemGroup>
     <PackageReference Include="Xamarin.Forms" Version="3.1.0.697729" />  
   </ItemGroup>
+
+  <ItemGroup>
+    <Reference Include="System.Data.CData.DynamicsCRM">
+      <HintPath>..\..\..\..\..\..\..\Program Files\CData\CData ADO.NET Provider for Dynamics CRM 2018J\lib\netstandard2.0\System.Data.CData.DynamicsCRM.dll</HintPath>
+    </Reference>
+  </ItemGroup>
 </Project>
