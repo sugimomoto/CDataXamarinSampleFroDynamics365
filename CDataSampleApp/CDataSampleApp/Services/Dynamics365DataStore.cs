@@ -11,8 +11,7 @@ namespace CDataSampleApp.Services
 {
     class Dynamics365DataStore : IDataStore<Item>
     {
-        List<Item> items;
-        private string connectionString = "";
+        private string connectionString = "User=XXXXX@XXXXX.onmicrosoft.com;Password=XXXXXX;URL=https://XXXXXXX.crm7.dynamics.com/;CRM Version=CRM Online;RTK=XXXXXXX;";
 
         public async Task<bool> AddItemAsync(Item item)
         {
@@ -24,7 +23,7 @@ namespace CDataSampleApp.Services
 
         public async Task<bool> UpdateItemAsync(Item item)
         {
-            var sql = $"Update set Subject = '{item.Text}', Description = '{item.Description}' where Id = '{item.Id}'";
+            var sql = $"Update Task set Subject = '{item.Text}', Description = '{item.Description}' where Id = '{item.Id}'";
             var result = ExecuteForDynamics365(sql);
 
             return await Task.FromResult(result);

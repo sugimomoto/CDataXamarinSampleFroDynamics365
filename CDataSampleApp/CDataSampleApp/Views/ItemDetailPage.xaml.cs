@@ -33,5 +33,21 @@ namespace CDataSampleApp.Views
             viewModel = new ItemDetailViewModel(item);
             BindingContext = viewModel;
         }
+
+        async void DeleteItem_Clicked(object sender, EventArgs e)
+        {
+            var accepted = await this.DisplayAlert("タスクを削除します。", "よろしいですか？", "Yes", "No");
+
+            if (accepted)
+            {
+                MessagingCenter.Send(this, "DeleteItem", viewModel.Item);
+                await Navigation.PopAsync();
+            }
+        }
+
+        async void UpdateItem_Clicked(object sender, EventArgs e)
+        {
+            await Navigation.PushAsync(new UpdateItemPage(new ItemUpdateViewModel(viewModel.Item)));
+        }
     }
 }

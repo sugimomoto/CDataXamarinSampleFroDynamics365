@@ -6,18 +6,18 @@ using Xamarin.Forms;
 
 namespace CDataSampleApp.ViewModels
 {
-    public class ItemDetailViewModel : BaseViewModel
+    public class ItemUpdateViewModel : BaseViewModel
     {
         public Item Item { get; set; }
-        public ItemDetailViewModel(Item item = null)
+        public ItemUpdateViewModel(Item item = null)
         {
             Title = item?.Text;
             Item = item;
             
             // Added Delete Processing.
-            MessagingCenter.Subscribe<ItemDetailPage, Item>(this, "DeleteItem", async (obj, deleteItem) =>
+            MessagingCenter.Subscribe<UpdateItemPage, Item>(this, "UpdateItem", async (obj, updateItem) =>
             {
-                await DataStore.DeleteItemAsync(deleteItem.Id);
+                await DataStore.UpdateItemAsync(updateItem);
             });
         }
     }

@@ -12,7 +12,7 @@ namespace CDataSampleApp.ViewModels
 {
     public class BaseViewModel : INotifyPropertyChanged
     {
-        public IDataStore<Item> DataStore => DependencyService.Get<IDataStore<Item>>() ?? new MockDataStore();
+        public IDataStore<Item> DataStore => DependencyService.Get<IDataStore<Item>>() ?? new Dynamics365DataStore();
 
         bool isBusy = false;
         public bool IsBusy

@@ -18,4 +18,10 @@
       <HintPath>..\..\..\..\..\..\..\Program Files\CData\CData ADO.NET Provider for Dynamics CRM 2018J\lib\netstandard2.0\System.Data.CData.DynamicsCRM.dll</HintPath>
     </Reference>
   </ItemGroup>
+
+  <ItemGroup>
+    <Compile Update="Views\UpdateItemPage.xaml.cs">
+      <DependentUpon>UpdateItemPage.xaml</DependentUpon>
+    </Compile>
+  </ItemGroup>
 </Project>
